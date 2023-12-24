@@ -11,7 +11,8 @@ const getHotelById = (req: Request, res: Response) => {
   res.send(data);
 };
 const insertHotel = (req: Request, res: Response) => {
-  res.send({ msg: "Inserting new hotel" });
+  const data = hotelService.insertHotel();
+  res.send(data);
 };
 const updateHotel = (req: Request, res: Response) => {
   const id = req.params.id;
