@@ -1,28 +1,28 @@
 import { Request, Response } from "express";
 import hotelService from "../services/hotel-service";
-const getAllHotels = (req: Request, res: Response) => {
-  const data = hotelService.getAllHotels();
+const getAllHotels = async (req: Request, res: Response) => {
+  const data = await hotelService.getAllHotels();
   res.send(data);
 };
 
-const getHotelById = (req: Request, res: Response) => {
+const getHotelById = async (req: Request, res: Response) => {
   const id = req.params.id;
-  const data = hotelService.getHotelById(parseInt(id));
+  const data = await hotelService.getHotelById(parseInt(id));
   res.send(data);
 };
-const insertHotel = (req: Request, res: Response) => {
-  const data = hotelService.insertHotel();
+const insertHotel = async (req: Request, res: Response) => {
+  const data = await hotelService.insertHotel();
   res.send(data);
 };
-const updateHotel = (req: Request, res: Response) => {
+const updateHotel = async (req: Request, res: Response) => {
   const id = req.params.id;
-  const data = hotelService.updateHotel(parseInt(id));
+  const data = await hotelService.updateHotel(parseInt(id));
   res.send(data);
 };
 
-const deleteHotel = (req: Request, res: Response) => {
+const deleteHotel = async (req: Request, res: Response) => {
   const id = req.params.id;
-  const data = hotelService.deleteHotel(parseInt(id));
+  const data = await hotelService.deleteHotel(parseInt(id));
   res.send(data);
 };
 export default {

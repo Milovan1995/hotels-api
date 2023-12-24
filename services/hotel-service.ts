@@ -1,8 +1,12 @@
-const getAllHotels = () => {
-  return { msg: "Getting all hotels" };
+import hotelRepository from "../repositories/hotel-repository";
+
+const getAllHotels = async () => {
+  const data = await hotelRepository.getAllHotels();
+  return data;
 };
-const getHotelById = (id: number) => {
-  return { msg: `Getting hotel with id:  ${id}` };
+const getHotelById = async (id: number) => {
+  const data = await hotelRepository.getHotelById(id);
+  return data;
 };
 
 const insertHotel = () => {
