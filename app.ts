@@ -4,7 +4,7 @@ import hotelRouter from "./routing/hotel-routing";
 
 const app = express();
 app.use(express.json());
-app.use(hotelRouter);
+app.use("/hotel", hotelRouter);
 
 const port: number = 3000;
 app.listen(port, () => {
