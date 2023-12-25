@@ -6,18 +6,24 @@ const getAllHotels = async () => {
 };
 const getHotelById = async (id: number) => {
   const data = await hotelRepository.getHotelById(id);
+  if (data && data.length > 0) {
+    return data[0];
+  }
+  return null;
+};
+
+const insertHotel = async (hotel: any) => {
+  const data = await hotelRepository.insertHotel(hotel);
   return data;
 };
 
-const insertHotel = () => {
-  return { msg: "Inserting new hotel" };
+const updateHotel = async (id: number, hotel: any) => {
+  const data = await hotelRepository.updateHotel(id, hotel);
+  return data;
 };
-
-const updateHotel = (id: number) => {
-  return { msg: `Updating hotel with id: ${id}` };
-};
-const deleteHotel = (id: number) => {
-  return { msg: `Deleted hotel with id: ${id}` };
+const deleteHotel = async (id: number) => {
+  const data = await hotelRepository.deleteHotel(id);
+  return data;
 };
 export default {
   getAllHotels,

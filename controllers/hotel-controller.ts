@@ -11,12 +11,12 @@ const getHotelById = async (req: Request, res: Response) => {
   res.send(data);
 };
 const insertHotel = async (req: Request, res: Response) => {
-  const data = await hotelService.insertHotel();
+  const data = await hotelService.insertHotel(req.body);
   res.send(data);
 };
 const updateHotel = async (req: Request, res: Response) => {
   const id = req.params.id;
-  const data = await hotelService.updateHotel(parseInt(id));
+  const data = await hotelService.updateHotel(parseInt(id), req.body);
   res.send(data);
 };
 
