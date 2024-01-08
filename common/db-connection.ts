@@ -6,7 +6,7 @@ const dbConnect = new DataSource({
   port: 3306,
   username: "root",
   password: "kukalatimajka123",
-  database: "hotel",
+  database: "logate",
 });
 
 export default dbConnect;
