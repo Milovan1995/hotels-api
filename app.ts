@@ -4,8 +4,10 @@ import "reflect-metadata";
 import hotelRouter from "./routing/hotel-routing";
 import dbConnect from "./common/db-connection";
 import roomRouter from "./routing/room-routing";
+import cors from "cors";
 
 const app = express();
+app.use(cors());
 app.use(express.json());
 app.use("/hotel", hotelRouter);
 app.use("/room", roomRouter);
