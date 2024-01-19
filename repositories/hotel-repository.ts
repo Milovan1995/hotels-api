@@ -40,7 +40,13 @@ const updateHotel = async (id: number, hotel: any) => {
   try {
     const data = await dbConnect.query(
       "UPDATE hotel SET name = ?, description = ?, no_of_stars = ?, year_of_start = ?, updated = now() WHERE id = ?",
-      [hotel.name, hotel.description, hotel.noOfStars, hotel.yearOfStart, id]
+      [
+        hotel.name,
+        hotel.description,
+        hotel.no_of_stars,
+        hotel.year_of_start,
+        id,
+      ]
     );
     return data;
   } catch (e) {

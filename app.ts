@@ -5,12 +5,18 @@ import hotelRouter from "./routing/hotel-routing";
 import dbConnect from "./common/db-connection";
 import roomRouter from "./routing/room-routing";
 import cors from "cors";
+import path from "path";
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 app.use("/hotel", hotelRouter);
 app.use("/room", roomRouter);
+
+//putanje = aktuelni folder + public
+
+console.log(__dirname, "aktuelni folderF");
+app.use(express.static(path.join(__dirname, "public")));
 const port: number = 3000;
 
 dbConnect
