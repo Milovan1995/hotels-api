@@ -7,6 +7,7 @@ import roomRouter from "./routing/room-routing";
 import cors from "cors";
 import path from "path";
 import fileUploadRouter from "./common/file-upload";
+import userRouter from "./routing/user-routing";
 
 const app = express();
 app.use(cors());
@@ -14,6 +15,8 @@ app.use(express.json());
 app.use("/hotel", hotelRouter);
 app.use("/room", roomRouter);
 app.use(fileUploadRouter);
+
+app.use(userRouter);
 //putanje = aktuelni folder + public
 
 app.use(express.static(path.join(__dirname, "public")));

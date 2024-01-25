@@ -1,10 +1,11 @@
 import hotelController from "../controllers/hotel-controller";
 import express from "express";
+import authMiddleware from "../middlewares/auth-middleware";
 const hotelRouter = express.Router();
 
 hotelRouter
   .route("/")
-  .get(hotelController.getAllHotels)
+  .get(authMiddleware, hotelController.getAllHotels)
   .post(hotelController.insertHotel);
 
 hotelRouter
