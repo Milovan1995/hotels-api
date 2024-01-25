@@ -1,4 +1,4 @@
-import dbConnect from "../common/db-connection";
+import dbConnect from '../common/db-connection'
 
 const insertRoom = async (room: any) => {
   try {
@@ -11,23 +11,23 @@ const insertRoom = async (room: any) => {
         room.roomName,
         room.roomDescription,
       ]
-    );
-    return result;
+    )
+    return result
   } catch (e) {
-    console.error(e, "error");
+    console.error(e, 'error')
   }
-};
+}
 
 const getRoomsByHotel = async (id: any) => {
   try {
     const data = await dbConnect.query(
-      "SELECT * FROM room WHERE hotel_id = ?",
+      'SELECT * FROM room WHERE hotel_id = ?',
       [id]
-    );
-    return data;
+    )
+    return data
   } catch (e) {
-    console.error(e, "error");
+    console.error(e, 'error')
   }
-};
+}
 
-export default { insertRoom, getRoomsByHotel };
+export default { insertRoom, getRoomsByHotel }

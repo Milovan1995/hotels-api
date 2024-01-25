@@ -32,7 +32,7 @@ fileUploadRouter.post(
         filename: request.file.filename,
       });
     }
-  }
+  },
 );
 
 export default fileUploadRouter;
